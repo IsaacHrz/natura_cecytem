@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natura CECyTEM - Productos Naturales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Natura CECyTEM</div>
+                <nav>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+                <div class="cart-section">
+                    <button class="cart-toggle">🛒 <span id="cart-count">0</span></button>
+                </div>
+                <button class="theme-toggle">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Inicio con Carrusel 3D -->
+    <section id="inicio" class="section" style="margin-top: 100px;">
+        <div class="container">
+            <h2 class="section-title">Productos Naturales de CECyTEM Jilotepec</h2>
+            <div class="carousel-3d">
+                <div class="carousel-3d-inner">
+                    <div class="carousel-3d-item" style="transform: rotateY(0deg) translateZ(400px);"><img src="https://www.gob.mx/cms/uploads/image/file/558565/arnica-468434_1920.jpg" alt="Cultivo"></div>
+                    <div class="carousel-3d-item" style="transform: rotateY(45deg) translateZ(400px);"><img src="https://www.contrapunto.com.sv/wp-content/uploads/2022/11/0-1024x651.jpg" alt="Recolección"></div>
+                    <div class="carousel-3d-item" style="transform: rotateY(90deg) translateZ(400px);"><img src="https://th.bing.com/th/id/OIP.b_2p243KT7fzSMCYnUJZ-wHaE8?cb=iwp2&rs=1&pid=ImgDetMain" alt="Mezcla"></div>
+                    <div class="carousel-3d-item" style="transform: rotateY(135deg) translateZ(400px);"><img src="https://th.bing.com/th/id/R.2557c7ab9f52e55fb3ed91542a9aec9e?rik=6neHgHNqw2ZuFw&pid=ImgRaw&r=0" alt="Moldeo"></div>
+                    <div class="carousel-3d-item" style="transform: rotateY(180deg) translateZ(400px);"><img src="https://th.bing.com/th/id/OIP.1Z5JHSOLi-XA5vtdoYa3pgHaE8?cb=iwp2&rs=1&pid=ImgDetMain" alt="Secado"></div>
+                    <div class="carousel-3d-item" style="transform: rotateY(225deg) translateZ(400px);"><img src="https://th.bing.com/th/id/OIP.Tlf8j4qMRh6qDnPE56eVEQHaDt?cb=iwp2&rs=1&pid=ImgDetMain" alt="Empaque"></div>
+                    <div class="carousel-3d-item" style="transform: rotateY(270deg) translateZ(400px);"><img src="https://th.bing.com/th/id/OIP.sce-0XII-ic0Ggr6d9ZfTgHaFj?cb=iwp2&rs=1&pid=ImgDetMain" alt="Producto Final"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos -->
+    <section id="productos" class="section">
+        <div class="container">
+            <h2 class="section-title">Nuestros Productos</h2>
+            <div class="products-grid">
+                <div class="product-card" data-modal="gel" data-product-id="1">
+                    <div class="discount-badge">Nuevo!</div>
+                    <img src="b88a426e-c821-4f95-bd14-e8eb16f95e5a.png" alt="Gel Antibacterial">
+                    <h3>Gel Antibacterial</h3>
+                    <div class="product-meta">
+                        <span class="stock">En stock: 15</span>
+                        <span>Categoría: Higiene</span>
+                    </div>
+                    <div class="rating">★★★★☆</div>
+                    <p class="product-price">$49.99</p>
+                    <div class="product-actions">
+                        <a href="#" class="btn view-details" data-modal="gel" data-product-id="1">Ver Más</a>
+                        <button class="btn add-to-cart" data-product-id="1">Agregar al Carrito</button>
+                    </div>
+                    <div class="product-details">
+                        <h4>Detalles del Producto</h4>
+                        <p>Gel antibacterial elaborado con ingredientes naturales que elimina el 99.9% de bacterias sin dañar tu piel.</p>
+                        <ul>
+                            <li>Ingredientes: Alcohol de caña, aloe vera, aceites esenciales</li>
+                            <li>Presentación: Botella de 250ml</li>
+                            <li>Uso: Aplicar en manos y frotar hasta secar</li>
+                        </ul>
+                        <div class="comment-section">
+                            <h4>Comentarios</h4>
+                            <div class="comments-list" id="comments-gel"></div>
+                            <div class="comment-form">
+                                <h4>Deja tu comentario</h4>
+                                <form onsubmit="submitComment(event, 'gel', 1)">
+                                    <div class="form-group">
+                                        <label for="name-gel">Nombre:</label>
+                                        <input type="text" id="name-gel" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email-gel">Email:</label>
+                                        <input type="email" id="email-gel" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="rating-gel">Valoración:</label>
+                                        <select id="rating-gel" required>
+                                            <option value="">Selecciona...</option>
+                                            <option value="5">★★★★★</option>
+                                            <option value="4">★★★★☆</option>
+                                            <option value="3">★★★☆☆</option>
+                                            <option value="2">★★☆☆☆</option>
+                                            <option value="1">★☆☆☆☆</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="comment-gel">Comentario:</label>
+                                        <textarea id="comment-gel" rows="3" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn">Enviar Comentario</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-modal="crema" data-product-id="2">
+                    <img src="86a8668b-af9d-4b52-ac08-40576bafc1c8.png" alt="Crema Corporal">
+                    <h3>Crema Corporal</h3>
+                    <div class="product-meta">
+                        <span class="stock">En stock: 8</span>
+                        <span>Categoría: Cuidado Personal</span>
+                    </div>
+                    <div class="rating">★★★★★</div>
+                    <p class="product-price">$59.99</p>
+                    <div class="product-actions">
+                        <a href="#" class="btn view-details" data-modal="crema" data-product-id="2">Ver Más</a>
+                        <button class="btn add-to-cart" data-product-id="2">Agregar al Carrito</button>
+                    </div>
+                    <div class="product-details">
+                        <h4>Detalles del Producto</h4>
+                        <p>Crema hidratante corporal con ingredientes naturales que nutren y protegen tu piel.</p>
+                        <ul>
+                            <li>Ingredientes: Manteca de karité, aceite de coco, cera de abeja</li>
+                            <li>Presentación: Frasco de 200ml</li>
+                            <li>Uso: Aplicar sobre la piel después del baño</li>
+                        </ul>
+                        <div class="comment-section">
+                            <h4>Comentarios</h4>
+                            <div class="comments-list" id="comments-crema"></div>
+                            <div class="comment-form">
+                                <h4>Deja tu comentario</h4>
+                                <form onsubmit="submitComment(event, 'crema', 2)">
+                                    <div class="form-group">
+                                        <label for="name-crema">Nombre:</label>
+                                        <input type="text" id="name-crema" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email-crema">Email:</label>
+                                        <input type="email" id="email-crema" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="rating-crema">Valoración:</label>
+                                        <select id="rating-crema" required>
+                                            <option value="">Selecciona...</option>
+                                            <option value="5">★★★★★</option>
+                                            <option value="4">★★★★☆</option>
+                                            <option value="3">★★★☆☆</option>
+                                            <option value="2">★★☆☆☆</option>
+                                            <option value="1">★☆☆☆☆</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="comment-crema">Comentario:</label>
+                                        <textarea id="comment-crema" rows="3" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn">Enviar Comentario</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-modal="unguento" data-product-id="3">
+                    <img src="e6499f84-e929-40bb-a024-06fa90458926.png" alt="Ungüento Medicinal">
+                    <h3>Ungüento Medicinal</h3>
+                    <div class="product-meta">
+                        <span class="stock">En stock: 12</span>
+                        <span>Categoría: Salud</span>
+                    </div>
+                    <div class="rating">★★★☆☆</div>
+                    <p class="product-price">$39.99</p>
+                    <div class="product-actions">
+                        <a href="#" class="btn view-details" data-modal="unguento" data-product-id="3">Ver Más</a>
+                        <button class="btn add-to-cart" data-product-id="3">Agregar al Carrito</button>
+                    </div>
+                    <div class="product-details">
+                        <h4>Detalles del Producto</h4>
+                        <p>Alivio natural para dolores y heridas. Ideal para torceduras, dolores musculares y pequeñas irritaciones de la piel.</p>
+                        <ul>
+                            <li>Ingredientes: Árnica, caléndula, aceite de oliva</li>
+                            <li>Presentación: Frasco de 50g</li>
+                            <li>Uso: Aplicar en la zona afectada</li>
+                        </ul>
+                        <div class="comment-section">
+                            <h4>Comentarios</h4>
+                            <div class="comments-list" id="comments-unguento"></div>
+                            <div class="comment-form">
+                                <h4>Deja tu comentario</h4>
+                                <form onsubmit="submitComment(event, 'unguento', 3)">
+                                    <div class="form-group">
+                                        <label for="name-unguento">Nombre:</label>
+                                        <input type="text" id="name-unguento" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email-unguento">Email:</label>
+                                        <input type="email" id="email-unguento" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="rating-unguento">Valoración:</label>
+                                        <select id="rating-unguento" required>
+                                            <option value="">Selecciona...</option>
+                                            <option value="5">★★★★★</option>
+                                            <option value="4">★★★★☆</option>
+                                            <option value="3">★★★☆☆</option>
+                                            <option value="2">★★☆☆☆</option>
+                                            <option value="1">★☆☆☆☆</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="comment-unguento">Comentario:</label>
+                                        <textarea id="comment-unguento" rows="3" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn">Enviar Comentario</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-modal="acetona" data-product-id="4">
+                    <div class="discount-badge">Oferta!</div>
+                    <img src="b3407e15-2ff9-4197-b658-0ab8bd776ed4.png" alt="Acetona Natural">
+                    <h3>Acetona Natural</h3>
+                    <div class="product-meta">
+                        <span class="stock">En stock: 5</span>
+                        <span>Categoría: Belleza</span>
+                    </div>
+                    <div class="rating">★★★★☆</div>
+                    <p class="product-price"><span style="text-decoration: line-through; color: #999;">$69.99</span> $59.99</p>
+                    <div class="product-actions">
+                        <a href="#" class="btn view-details" data-modal="acetona" data-product-id="4">Ver Más</a>
+                        <button class="btn add-to-cart" data-product-id="4">Agregar al Carrito</button>
+                    </div>
+                    <div class="product-details">
+                        <h4>Detalles del Producto</h4>
+                        <p>Removedor de esmalte suave y ecológico. Elimina el esmalte sin dañar ni resecar tus uñas.</p>
+                        <ul>
+                            <li>Ingredientes: Aceite de ricino, vinagre, limón</li>
+                            <li>Presentación: Botella de 100ml</li>
+                            <li>Uso: Aplicar con algodón</li>
+                        </ul>
+                        <div class="comment-section">
+                            <h4>Comentarios</h4>
+                            <div class="comments-list" id="comments-acetona"></div>
+                            <div class="comment-form">
+                                <h4>Deja tu comentario</h4>
+                                <form onsubmit="submitComment(event, 'acetona', 4)">
+                                    <div class="form-group">
+                                        <label for="name-acetona">Nombre:</label>
+                                        <input type="text" id="name-acetona" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email-acetona">Email:</label>
+                                        <input type="email" id="email-acetona" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="rating-acetona">Valoración:</label>
+                                        <select id="rating-acetona" required>
+                                            <option value="">Selecciona...</option>
+                                            <option value="5">★★★★★</option>
+                                            <option value="4">★★★★☆</option>
+                                            <option value="3">★★★☆☆</option>
+                                            <option value="2">★★☆☆☆</option>
+                                            <option value="1">★☆☆☆☆</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="comment-acetona">Comentario:</label>
+                                        <textarea id="comment-acetona" rows="3" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn">Enviar Comentario</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-modal="locion" data-product-id="5">
+                    <img src="8764d21c-5500-42cd-9c2d-29333e56e8cb.png" alt="Loción Desmaquillante">
+                    <h3>Loción Desmaquillante</h3>
+                    <div class="product-meta">
+                        <span class="out-of-stock">Agotado</span>
+                        <span>Categoría: Belleza</span>
+                    </div>
+                    <div class="rating">★★★★★</div>
+                    <p class="product-price">$79.99</p>
+                    <div class="product-actions">
+                        <a href="#" class="btn view-details" data-modal="locion" data-product-id="5" style="background-color: #ccc; cursor: not-allowed;">Ver Más</a>
+                        <button class="btn add-to-cart" data-product-id="5" disabled>Agregar al Carrito</button>
+                    </div>
+                    <div class="product-details">
+                        <h4>Detalles del Producto</h4>
+                        <p>Limpieza facial suave y natural. Elimina el maquillaje incluso el resistente al agua, sin irritar la piel.</p>
+                        <ul>
+                            <li>Ingredientes: Agua de rosas, aceite de almendras, hamamelis</li>
+                            <li>Presentación: Botella de 150ml</li>
+                            <li>Uso: Aplicar con algodón</li>
+                        </ul>
+                        <div class="comment-section">
+                            <h4>Comentarios</h4>
+                            <div class="comments-list" id="comments-locion"></div>
+                            <div class="comment-form">
+                                <h4>Deja tu comentario</h4>
+                                <form onsubmit="submitComment(event, 'locion', 5)">
+                                    <div class="form-group">
+                                        <label for="name-locion">Nombre:</label>
+                                        <input type="text" id="name-locion" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email-locion">Email:</label>
+                                        <input type="email" id="email-locion" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="rating-locion">Valoración:</label>
+                                        <select id="rating-locion" required>
+                                            <option value="">Selecciona...</option>
+                                            <option value="5">★★★★★</option>
+                                            <option value="4">★★★★☆</option>
+                                            <option value="3">★★★☆☆</option>
+                                            <option value="2">★★☆☆☆</option>
+                                            <option value="1">★☆☆☆☆</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="comment-locion">Comentario:</label>
+                                        <textarea id="comment-locion" rows="3" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn">Enviar Comentario</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-modal="labial" data-product-id="6">
+                    <img src="a9000d88-cb7a-458e-b434-1336fabecc49.png" alt="Labial Natural">
+                    <h3>Labial Natural</h3>
+                    <div class="product-meta">
+                        <span class="stock">En stock: 20</span>
+                        <span>Categoría: Belleza</span>
+                    </div>
+                    <div class="rating">★★★★☆</div>
+                    <p class="product-price">$45.99</p>
+                    <div class="product-actions">
+                        <a href="#" class="btn view-details" data-modal="labial" data-product-id="6">Ver Más</a>
+                        <button class="btn add-to-cart" data-product-id="6">Agregar al Carrito</button>
+                    </div>
+                    <div class="product-details">
+                        <h4>Detalles del Producto</h4>
+                        <p>Color y cuidado para tus labios. Hidrata mientras proporciona un toque de color natural.</p>
+                        <ul>
+                            <li>Ingredientes: Cera de abeja, remolacha, manteca de cacao</li>
+                            <li>Presentación: Tubo de 5g</li>
+                            <li>Uso: Aplicar directamente en los labios</li>
+                        </ul>
+                        <div class="comment-section">
+                            <h4>Comentarios</h4>
+                            <div class="comments-list" id="comments-labial"></div>
+                            <div class="comment-form">
+                                <h4>Deja tu comentario</h4>
+                                <form onsubmit="submitComment(event, 'labial', 6)">
+                                    <div class="form-group">
+                                        <label for="name-labial">Nombre:</label>
+                                        <input type="text" id="name-labial" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email-labial">Email:</label>
+                                        <input type="email" id="email-labial" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="rating-labial">Valoración:</label>
+                                        <select id="rating-labial" required>
+                                            <option value="">Selecciona...</option>
+                                            <option value="5">★★★★★</option>
+                                            <option value="4">★★★★☆</option>
+                                            <option value="3">★★★☆☆</option>
+                                            <option value="2">★★☆☆☆</option>
+                                            <option value="1">★☆☆☆☆</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="comment-labial">Comentario:</label>
+                                        <textarea id="comment-labial" rows="3" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn">Enviar Comentario</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería -->
+    <section id="galeria" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Galería de Productos</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://th.bing.com/th/id/R.8f9c106f6404f61456b1b8ab29d01c37?rik=3eGHBJjIUiC%2faQ&pid=ImgRaw&r=0" alt="Gel Antibacterial">
+                    <div class="gallery-overlay"><div class="gallery-title">Gel Antibacterial</div></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://th.bing.com/th/id/OIP.MBpf80_L7MTtrjeE1CCu1AHaKX?o=7&cb=iwp2rm=3&rs=1&pid=ImgDetMain" alt="Crema Corporal">
+                    <div class="gallery-overlay"><div class="gallery-title">Crema Corporal</div></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://th.bing.com/th/id/R.e6499f84e92940bba02406fa90458926?rik=2%2b1G2S3iJ%2bJ%2bcQ&pid=ImgRaw&r=0" alt="Ungüento Medicinal">
+                    <div class="gallery-overlay"><div class="gallery-title">Ungüento Medicinal</div></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.que.es/wp-content/uploads/2021/05/Que-es-la-acetona-1.jpg" alt="Acetona Natural">
+                    <div class="gallery-overlay"><div class="gallery-title">Acetona Natural</div></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.hacercremas.es/wp-content/uploads/2014/05/aceite-desmaquillante-3.jpg" alt="Loción Desmaquillante">
+                    <div class="gallery-overlay"><div class="gallery-title">Loción Desmaquillante</div></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://th.bing.com/th/id/R.eb78c513e68f0010673e5f01b9df8af0?rik=9zmWLezN9R0wdA&pid=ImgRaw&r=0" alt="Labial Natural">
+                    <div class="gallery-overlay"><div class="gallery-title">Labial Natural</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contáctanos</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Ponte en Contacto</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <p>CECyTEM Plantel Jilotepec, Carretera Jilotepec-Ixtlahuaca Km 5, Jilotepec, Estado de México</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <p>+52 761 123 4567 / +52 761 987 6543</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <p>natura.cecytem.jilotepec@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🌐</div>
+                        <p><a href="#" style="color: var(--rosa-fucsia);">www.naturacecytemjilotepec.org</a></p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nombre:</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Asunto:</label>
+                            <input type="text" id="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje:</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Carrito -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <button class="modal-close">✖</button>
+            <h3>Carrito de Compras</h3>
+            <div id="cart-items"></div>
+            <p id="cart-total">Total: $0.00</p>
+            <div class="cart-actions">
+                <button class="btn" id="clear-cart">Vaciar Carrito</button>
+                <button class="btn" id="checkout">Finalizar Compra</button>
+            </div>
+            <div class="checkout-form" style="display: none;">
+                <h4>Detalles de Compra</h4>
+                <form id="checkout-form">
+                    <div class="form-group">
+                        <label for="checkout-name">Nombre:</label>
+                        <input type="text" id="checkout-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout-email">Email:</label>
+                        <input type="email" id="checkout-email" required>
+                    </div>
+                    <button type="submit" class="btn">Confirmar Compra</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Producto -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <button class="modal-close">✖</button>
+            <h3 id="modal-title"></h3>
+            <p id="modal-text"></p>
+            <p id="modal-ingredients"></p>
+            <p id="modal-preparation"></p>
+            <p id="modal-legal"></p>
+            <div class="modal-comments">
+                <h4>Comentarios</h4>
+                <div class="comments-list" id="modal-comments-list"></div>
+                <div class="comment-form">
+                    <h4>Deja tu comentario</h4>
+                    <form id="modal-comment-form">
+                        <div class="form-group">
+                            <label for="modal-name">Nombre:</label>
+                            <input type="text" id="modal-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="modal-email">Email:</label>
+                            <input type="email" id="modal-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="modal-rating">Valoración:</label>
+                            <select id="modal-rating" required>
+                                <option value="">Selecciona...</option>
+                                <option value="5">★★★★★</option>
+                                <option value="4">★★★★☆</option>
+                                <option value="3">★★★☆☆</option>
+                                <option value="2">★★☆☆☆</option>
+                                <option value="1">★☆☆☆☆</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="modal-comment">Comentario:</label>
+                            <textarea id="modal-comment" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Comentario</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Iniciar sesión para el carrito
+        window.addEventListener('DOMContentLoaded', () => {
+            fetch('init_session.php', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.session_id) {
+                        loadCart();
+                        // Cargar comentarios para todos los productos
+                        document.querySelectorAll('.product-card').forEach(card => {
+                            const modalType = card.getAttribute('data-modal');
+                            const dbProductId = card.getAttribute('data-product-id');
+                            loadComments(modalType, card.querySelector('.comments-list'), dbProductId);
+                        });
+                    }
+                });
+        });
+
+        // Header scroll
+        window.addEventListener('scroll', () => {
+            document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Theme toggle
+        document.querySelector('.theme-toggle').addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            document.querySelector('.theme-toggle').textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+            localStorage.setItem('darkMode', document.body.classList.contains('dark'));
+        });
+
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark');
+            document.querySelector('.theme-toggle').textContent = '☀️';
+        }
+
+        // Carrusel 3D
+        const carousel = document.querySelector('.carousel-3d-inner');
+        let angle = 0;
+        setInterval(() => {
+            angle += 0.5;
+            carousel.style.transform = `rotateY(${angle}deg)`;
+        }, 50);
+
+        // Modal Producto
+        const modal = document.getElementById('modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalText = document.getElementById('modal-text');
+        const modalIngredients = document.getElementById('modal-ingredients');
+        const modalPreparation = document.getElementById('modal-preparation');
+        const modalLegal = document.getElementById('modal-legal');
+        const modalCommentsList = document.getElementById('modal-comments-list');
+        const modalCommentForm = document.getElementById('modal-comment-form');
+        const closeModal = document.querySelector('#modal .modal-close');
+
+        function openProductModal(modalType, dbProductId) {
+            if (modalType === 'gel') {
+                modalTitle.textContent = 'Gel Antibacterial';
+                modalText.textContent = 'Limpieza efectiva y natural para tus manos. Elimina el 99.9% de bacterias sin dañar tu piel gracias a sus ingredientes naturales.';
+                modalIngredients.textContent = 'Ingredientes: Alcohol de caña, aloe vera, aceite esencial de lavanda.';
+                modalPreparation.textContent = 'Preparación: Mezclar alcohol con aloe y añadir aceites esenciales.';
+                modalLegal.textContent = 'Lineamientos: Uso externo, no ingerir. Mantener fuera del alcance de los niños.';
+            } else if (modalType === 'crema') {
+                modalTitle.textContent = 'Crema Corporal';
+                modalText.textContent = 'Hidratación profunda con ingredientes naturales. Nutre y protege tu piel dejándola suave y radiante.';
+                modalIngredients.textContent = 'Ingredientes: Manteca de karité, aceite de coco, cera de abeja.';
+                modalPreparation.textContent = 'Preparación: Derretir la cera y mezclar con aceites a fuego lento.';
+                modalLegal.textContent = 'Lineamientos: Sin parabenos, apto para piel sensible.';
+            } else if (modalType === 'unguento') {
+                modalTitle.textContent = 'Ungüento Medicinal';
+                modalText.textContent = 'Alivio natural para dolores y heridas. Ideal para torceduras, dolores musculares y pequeñas irritaciones de la piel.';
+                modalIngredients.textContent = 'Ingredientes: Árnica, caléndula, aceite de oliva.';
+                modalPreparation.textContent = 'Preparación: Infusionar hierbas en aceite y solidificar con cera.';
+                modalLegal.textContent = 'Lineamientos: Uso tópico, consultar médico si persisten síntomas.';
+            } else if (modalType === 'acetona') {
+                modalTitle.textContent = 'Acetona Natural';
+                modalText.textContent = 'Removedor de esmalte suave y ecológico. Elimina el esmalte sin dañar ni resecar tus uñas.';
+                modalIngredients.textContent = 'Ingredientes: Aceite de ricino, vinagre, limón.';
+                modalPreparation.textContent = 'Preparación: Mezclar ingredientes y envasar.';
+                modalLegal.textContent = 'Lineamientos: Evitar contacto con ojos.';
+            } else if (modalType === 'locion') {
+                modalTitle.textContent = 'Loción Desmaquillante';
+                modalText.textContent = 'Limpieza facial suave y natural. Elimina el maquillaje incluso el resistente al agua, sin irritar la piel.';
+                modalIngredients.textContent = 'Ingredientes: Agua de rosas, aceite de almendras, hamamelis.';
+                modalPreparation.textContent = 'Preparación: Combinar ingredientes y agitar bien.';
+                modalLegal.textContent = 'Lineamientos: Sin alcohol, hipoalergénico.';
+            } else if (modalType === 'labial') {
+                modalTitle.textContent = 'Labial Natural';
+                modalText.textContent = 'Color y cuidado para tus labios. Hidrata mientras proporciona un toque de color natural.';
+                modalIngredients.textContent = 'Ingredientes: Cera de abeja, remolacha, manteca de cacao.';
+                modalPreparation.textContent = 'Preparación: Fundir cera y mezclar con pigmento natural.';
+                modalLegal.textContent = 'Lineamientos: Producto comestible, sin químicos agresivos.';
+            }
+            loadComments(modalType, modalCommentsList, dbProductId);
+            modalCommentForm.onsubmit = function(e) {
+                e.preventDefault();
+                submitComment(e, modalType, dbProductId, modalCommentsList);
+            };
+            modal.style.display = 'flex';
+        }
+
+        document.querySelectorAll('.product-card, .view-details').forEach(element => {
+            element.addEventListener('click', (e) => {
+                if (e.target.closest('.add-to-cart') || e.target.closest('.product-details') || e.target.closest('.btn:not(.view-details)')) return;
+                e.preventDefault();
+                const modalType = element.getAttribute('data-modal') || element.closest('.product-card').getAttribute('data-modal');
+                const dbProductId = element.getAttribute('data-product-id') || element.closest('.product-card').getAttribute('data-product-id');
+                openProductModal(modalType, dbProductId);
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) modal.style.display = 'none';
+        });
+
+        // Carrito
+        const cartModal = document.getElementById('cart-modal');
+        const cartClose = document.querySelector('#cart-modal .modal-close');
+        const cartToggle = document.querySelector('.cart-toggle');
+        const clearCartBtn = document.getElementById('clear-cart');
+        const checkoutBtn = document.getElementById('checkout');
+        const checkoutForm = document.getElementById('checkout-form');
+
+        cartToggle.addEventListener('click', () => {
+            cartModal.style.display = 'flex';
+            loadCart();
+        });
+
+        cartClose.addEventListener('click', () => {
+            cartModal.style.display = 'none';
+        });
+
+        cartModal.addEventListener('click', (e) => {
+            if (e.target === cartModal) cartModal.style.display = 'none';
+        });
+
+        document.querySelectorAll('.add-to-cart').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const productId = btn.getAttribute('data-product-id');
+                addToCart(productId);
+            });
+        });
+
+        clearCartBtn.addEventListener('click', () => {
+            fetch('clear_cart.php', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        loadCart();
+                        alert('Carrito vaciado.');
+                    } else {
+                        alert('Error al vaciar el carrito: ' + data.message);
+                    }
+                });
+        });
+
+        checkoutBtn.addEventListener('click', () => {
+            document.querySelector('.checkout-form').style.display = 'block';
+        });
+
+        checkoutForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('checkout-name').value;
+            const email = document.getElementById('checkout-email').value;
+            fetch('checkout.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Compra finalizada con éxito. Gracias, ' + name + '!');
+                        cartModal.style.display = 'none';
+                        checkoutForm.reset();
+                        document.querySelector('.checkout-form').style.display = 'none';
+                        loadCart();
+                    } else {
+                        alert('Error al procesar la compra: ' + data.message);
+                    }
+                });
+        });
+
+        function addToCart(productId) {
+            fetch('add_to_cart.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ product_id: productId, quantity: 1 })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        loadCart();
+                        alert('Producto añadido al carrito.');
+                    } else {
+                        alert('Error: ' + data.message);
+                    }
+                });
+        }
+
+        function updateCartItem(productId, quantity) {
+            fetch('update_cart.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ product_id: productId, quantity })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        loadCart();
+                    } else {
+                        alert('Error: ' + data.message);
+                    }
+                });
+        }
+
+        function removeCartItem(productId) {
+            fetch('remove_from_cart.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ product_id: productId })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        loadCart();
+                    } else {
+                        alert('Error: ' + data.message);
+                    }
+                });
+        }
+
+        function loadCart() {
+            fetch('get_cart.php')
+                .then(response => response.json())
+                .then(data => {
+                    const cartItems = document.getElementById('cart-items');
+                    const cartTotal = document.getElementById('cart-total');
+                    const cartCount = document.getElementById('cart-count');
+                    cartItems.innerHTML = '';
+                    let total = 0;
+                    let count = 0;
+                    if (data.items && data.items.length > 0) {
+                        data.items.forEach(item => {
+                            const itemTotal = item.cantidad * item.precio;
+                            total += itemTotal;
+                            count += item.cantidad;
+                            const itemElement = document.createElement('div');
+                            itemElement.className = 'cart-item';
+                            itemElement.innerHTML = `
+                                <div class="cart-item-info">
+                                    <span>${item.nombre}</span>
+                                    <span>$${item.precio} x <input type="number" value="${item.cantidad}" min="1" max="${item.stock}" onchange="updateCartItem(${item.producto_id}, this.value)"></span>
+                                    <span>$${itemTotal.toFixed(2)}</span>
+                                </div>
+                                <button class="btn remove-item" onclick="removeCartItem(${item.producto_id})">Eliminar</button>
+                            `;
+                            cartItems.appendChild(itemElement);
+                        });
+                    } else {
+                        cartItems.innerHTML = '<p>El carrito está vacío.</p>';
+                    }
+                    cartTotal.textContent = `Total: $${total.toFixed(2)}`;
+                    cartCount.textContent = count;
+                });
+        }
+
+        function loadComments(productId, container, dbProductId) {
+            fetch('get_comments.php?product_id=' + dbProductId)
+                .then(response => response.json())
+                .then(comments => {
+                    container.innerHTML = '';
+                    if (comments.length > 0) {
+                        comments.forEach(comment => {
+                            const commentElement = document.createElement('div');
+                            commentElement.className = 'comment';
+                            commentElement.innerHTML = `
+                                <div class="comment-author">${comment.nombre_usuario} <span class="rating">${'★'.repeat(comment.valoracion)}${'☆'.repeat(5 - comment.valoracion)}</span></div>
+                                <div class="comment-date">${comment.fecha}</div>
+                                <div class="comment-text">${comment.comentario}</div>
+                            `;
+                            container.appendChild(commentElement);
+                        });
+                    } else {
+                        container.innerHTML = '<p>No hay comentarios aún. Sé el primero en opinar!</p>';
+                    }
+                });
+        }
+
+        function submitComment(event, productId, dbProductId, container = null) {
+            event.preventDefault();
+            const form = event.target;
+            let name, email, rating, comment;
+            if (container) {
+                name = document.getElementById('modal-name').value;
+                email = document.getElementById('modal-email').value;
+                rating = document.getElementById('modal-rating').value;
+                comment = document.getElementById('modal-comment').value;
+            } else {
+                name = form.querySelector('input[type="text"]').value;
+                email = form.querySelector('input[type="email"]').value;
+                rating = form.querySelector('select').value;
+                comment = form.querySelector('textarea').value;
+            }
+            if (!name || !email || !rating || !comment) {
+                alert('Por favor completa todos los campos');
+                return;
+            }
+            fetch('guardar_comentario.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    productId: dbProductId,
+                    name: name,
+                    email: email,
+                    rating: rating,
+                    comment: comment
+                })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('¡Gracias por tu comentario! Será revisado y publicado pronto.');
+                        form.reset();
+                        if (container) {
+                            loadComments(productId, container, dbProductId);
+                        } else {
+                            loadComments(productId, form.closest('.comment-section').querySelector('.comments-list'), dbProductId);
+                        }
+                    } else {
+                        alert('Error al enviar el comentario: ' + data.message);
+                    }
+                });
+        }
+
+        // Formulario de contacto
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            if (!name || !email || !subject || !message) {
+                alert('Por favor completa todos los campos');
+                return;
+            }
+            fetch('send_contact.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, subject, message })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert(`Gracias ${name}, tu mensaje ha sido enviado. Nos pondremos en contacto contigo pronto.`);
+                        this.reset();
+                    } else {
+                        alert('Error al enviar el mensaje: ' + data.message);
+                    }
+                });
+        });
+    </script>
+</body>
+</html>
